@@ -7,9 +7,8 @@ import fixtures.Room;
 public class Main {
 	static Scanner input=new Scanner(System.in);
 
+	static RoomManager rm=new RoomManager();
 	public static void main(String[] args) {
-		System.out.println();
-		System.out.println("Which direction you want go: ");
 		
 		Room room1=new Room("North room","short description","This is a long description");
 		Room room2=new Room("East room","short descrition","A long dining room");
@@ -25,9 +24,21 @@ public class Main {
 		current=room1;
 		String move;
 		
-		System.out.println("You are in "+current.getNorth());
-		System.out.println("The exit is "+current.getExits());
+		Player player=new Player();
 		
+		rm.init();
+		player.currentRoom=rm.getAllRomms();
+		
+		System.out.println(player.currentRoom[0].north);
+		System.out.println(player.currentRoom[1].east);
+		System.out.println(player.currentRoom[2].south);
+		System.out.println(player.currentRoom[3].west);
+
+		while(true) {
+		System.out.println("You are in "+current.getNorth().toString());
+		System.out.println("The exit is "+current.getExits().toString());
+		System.out.println("Which direction you want go: ");
+
 		move=input.nextLine();
 		
 		// All rooms
@@ -42,7 +53,7 @@ public class Main {
 		}else {
 			System.out.println("Sorry!!! no room here");
 		}
-		
+			}
 	}
 	
 	private static void printRoom(Player player) {

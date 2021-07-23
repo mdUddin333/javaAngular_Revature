@@ -1,5 +1,6 @@
 package fixtures;
 
+
 public class Room extends Fixture{
 
 	public Room north;
@@ -59,5 +60,9 @@ public class Room extends Fixture{
 
 	public void setWest(Room west) {
 		this.west = west;
-	}	
+	}
+
+	
+	
+	
 }

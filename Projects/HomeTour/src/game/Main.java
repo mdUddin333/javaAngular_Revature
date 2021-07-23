@@ -10,6 +10,11 @@ public class Main {
 	static RoomManager rm=new RoomManager();
 	public static void main(String[] args) {
 		
+		rm.init();
+		Player player=new Player();
+
+		player.currentRoom=rm.getAllRomms();
+		
 		Room room1=new Room("North room","short description","This is a long description");
 		Room room2=new Room("East room","short descrition","A long dining room");
 		Room room3=new Room("South room","short description","This is a long description");
@@ -24,16 +29,13 @@ public class Main {
 		current=room1;
 		String move;
 		
-		Player player=new Player();
 		
-		rm.init();
-		player.currentRoom=rm.getAllRomms();
-		
+		/*
 		System.out.println(player.currentRoom[0].north);
 		System.out.println(player.currentRoom[1].east);
 		System.out.println(player.currentRoom[2].south);
 		System.out.println(player.currentRoom[3].west);
-
+*/
 		while(true) {
 		System.out.println("You are in "+current.getNorth().toString());
 		System.out.println("The exit is "+current.getExits().toString());
@@ -53,6 +55,7 @@ public class Main {
 		}else {
 			System.out.println("Sorry!!! no room here");
 		}
+		
 			}
 	}
 	

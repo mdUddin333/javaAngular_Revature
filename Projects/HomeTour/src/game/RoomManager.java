@@ -13,6 +13,7 @@ public class RoomManager {
 							"\n"+"The hardwood floor leads west into doorway, next to a staircase that leads up to a second floor."+"\n"+
 							"To the north is a small room, where you can see a piano.");
 	
+		System.out.println("Welcome to the home tour");
 		rooms=new Room[4];
 		this.rooms[3]=foyer;
 		
@@ -31,7 +32,7 @@ public class RoomManager {
 		south.getExit("south");
 		west.getExit("west");
 		this.startingRoom=foyer;
-			
+			System.out.println(rooms[0]);
 	}
 	public Room[] getAllRomms() {
 		

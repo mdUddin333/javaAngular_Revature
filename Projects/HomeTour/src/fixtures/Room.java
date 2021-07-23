@@ -1,5 +1,6 @@
 package fixtures;
 
+import java.util.Arrays;
 
 public class Room extends Fixture{
 
@@ -9,12 +10,11 @@ public class Room extends Fixture{
 	public Room west;
 
 	
-	Room[] exits;
+	Room[] exits=new Room[4];
 	
 	
 	public Room(String name, String shortDescription, String longDescription) {
 		super(name,shortDescription,longDescription);
-		this.exits=new Room[3];
 		}
 
 	public void setExits(Room[] exits) {
@@ -22,7 +22,7 @@ public class Room extends Fixture{
 	}
 	
 	public Room[] getExits() {
-		return exits;
+		return this.exits;
 		
 	}
 	public Room getExit(String direction) {
@@ -62,6 +62,7 @@ public class Room extends Fixture{
 		this.west = west;
 	}
 
+	
 	
 	
 	

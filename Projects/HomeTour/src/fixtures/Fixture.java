@@ -19,6 +19,12 @@ public abstract class Fixture {
 		this.shortDescription = shortDescription;
 		this.longDescription = longDescription;
 	}
+
+	@Override
+	public String toString() {
+		return "Fixture [name=" + name + ", shortDescription=" + shortDescription + ", longDescription="
+				+ longDescription + "]";
+	}
 	
 	
 	

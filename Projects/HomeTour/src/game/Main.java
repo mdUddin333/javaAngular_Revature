@@ -15,9 +15,11 @@ public class Main {
 		 
 		 Player player=new Player();
 		 player.currentRoom=rm.startingRoom;
-		 
+		 player.currentRoom.setItem(rm.startingRoom.getItem());
 		 printRoom(player);
-		 
+		 System.out.println(player.currentRoom.shortDescription);
+		 System.out.println(player.currentRoom.longDescription);
+
 		 System.out.println("\nExits: ");
 		 
 		 for(int i=0;i<player.currentRoom.getExits().length;i++) {
@@ -55,13 +57,16 @@ public class Main {
 		Room currentRoom=player.currentRoom;
 		
 		String act=command[0];
-		//String option=command[1];
+		String option=command[1];
 		
 		
 		switch (act) {
 		case "go":
-			player.currentRoom=currentRoom.getExit("north");
+			player.currentRoom=currentRoom.getExit(option);
+			player.currentRoom.setItem(currentRoom.getExit(option).getItem());
 			printRoom(player);
+			System.out.println(player.currentRoom.shortDescription);
+			System.out.println(player.currentRoom.longDescription);
 			System.out.println("\nExits");
 			
 			for(int i=0;i<player.currentRoom.getExits().length;i++) {
@@ -71,7 +76,8 @@ public class Main {
 			}
 			
 			break;
-
+		case "interact":
+			System.out.println(player.currentRoom.getItem().longDescription);
 		case "exit":
 			System.exit(0);
 		}

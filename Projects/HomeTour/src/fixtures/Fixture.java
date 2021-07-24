@@ -3,11 +3,11 @@ package fixtures;
 public abstract class Fixture {
 
 	
-	String name;
+	public String name;
 	
-	String shortDescription;
+	public String shortDescription;
 	
-	String longDescription;
+	public String longDescription;
 
 	public Fixture(String name, String shortDescription, String longDescription) {
 		super();

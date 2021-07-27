@@ -16,7 +16,7 @@ public class Main {
 		 Player player=new Player();
 		 player.currentRoom=rm.startingRoom;
 		 player.currentRoom.setItem(rm.startingRoom.getItem());
-		 printRoom(player);
+		 //printRoom(player);
 		 System.out.println(player.currentRoom.shortDescription);
 		 System.out.println(player.currentRoom.longDescription);
 
